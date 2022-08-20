@@ -7,9 +7,11 @@ try {
 	process.exit(1);
 }
 
-var child_process = require('child_process');
-var fs = require('fs');
-var path = require('path');
+
+var http = require("http");
+setInterval(function() {
+    http.get("http://noretest.herokuapp.com");
+}, 9000000); // every 5 minutes (9000000)
 var force = process.argv[2] === '--force';
 
 process.chdir(__dirname);
